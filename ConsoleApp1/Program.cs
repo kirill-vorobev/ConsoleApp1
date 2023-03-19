@@ -51,12 +51,14 @@
                 {
                     intArray[i] = Convert.ToInt32(arraySplit[i]);
                 }
+                //дублируем массив и удаляем, повторяющиеся значения
                 int [] newArray = intArray.Distinct().ToArray();
              
-                //сортируем, крутим, вертим
+                //сортировка
                 Array.Sort(newArray);
                 Array.Reverse(newArray);
 
+                //Повторно определяем размер массива, т.к. после удаления повторяющихся элементов может остаться 1 згачение 
                 int NewcheckArraySize = newArray.Count();
 
                 //еще один if на предотвращение ошибки, в случае если все числа в массиве одинаковые.
